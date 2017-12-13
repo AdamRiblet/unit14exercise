@@ -1,0 +1,216 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>HalesCo Games - Store</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <style>
+            body {
+                padding-top: 50px;
+                padding-bottom: 20px;
+            }
+        </style>
+        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/lightbox.min.css">
+
+        <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">HalesCo Games</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav nav-pills navbar-left" role="tablist">
+                    <li><a href="index.html">Home</a></li>
+                    <li class="active"><a href="#">Store</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>     
+                </ul>
+            </div><!--/.navbar-collapse -->
+        </div>
+    </nav>
+
+    <div class="container storetainer">
+        <div class="row">
+            <div class="col-md-8">
+                <div id="inventory"></div>
+            </div>
+            <div class="col-md-4 affix">
+                <div class="cart">
+                    <h1>Shopping Cart</h1>
+                    <div id="cartcontents">Your shopping cart is empty!<br /><br /></div>
+                    <p><a class="btn btn-primary btn-lg" role="button" data-toggle="modal" data-target="#checkout">Checkout &raquo;</a></p>
+                </div>
+            </div>
+        </div>
+        
+        <div id="checkout" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Checkout</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form id="order_form" name="order_form" action="https://formspree.io/mhales1@stu.parkland.edu" method="POST">
+                            <div class="form-group">
+                                <label for="email_1">Email Address:</label>
+                                <input type="email" class="form-control" id="email_1" name="email_1">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email_2">Re-enter Email Address:</label>
+                                <input type="email" class="form-control" id="email_2" name="email_2">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="first_name">First name:</label>
+                                <input type="text" class="form-control" id="first_name" name="first_name">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="last_name">Last Name:</label>
+                                <input type="text" class="form-control" id="last_name" name="last_name">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="address_1">Address:</label>
+                                <input type="text" class="form-control" id="address_1" name="address_1">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="address_2">Address 2:</label>
+                                <input type="text" class="form-control" id="address_2" name="address_2">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="city">City:</label>
+                                <input type="text" class="form-control" id="city" name="city">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="state">2-Character State Code:</label>
+                                <input type="text" class="form-control" id="state" name="state">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="zip">5-Digit Zip Code:</label>
+                                <input type="text" class="form-control" id="zip" name="zip">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="card_number">Card Number:</label>
+                                <input type="text" class="form-control" name="card_number" id="card_number" placeholder="Debit/Credit Card Number">
+                            </div>
+                            <div class="form-group">
+                                <label for="expiry_month">Expiration Date:</label>
+                                <div class="col">
+                                    <div class="row">
+                                        <div class="col-xs-6">
+                                            <select class="form-control col-sm-2" name="expiry_month" id="expiry_month">
+                                                <option>Month</option>
+                                                <option value="01">Jan (01)</option>
+                                                <option value="02">Feb (02)</option>
+                                                <option value="03">Mar (03)</option>
+                                                <option value="04">Apr (04)</option>
+                                                <option value="05">May (05)</option>
+                                                <option value="06">June (06)</option>
+                                                <option value="07">July (07)</option>
+                                                <option value="08">Aug (08)</option>
+                                                <option value="09">Sep (09)</option>
+                                                <option value="10">Oct (10)</option>
+                                                <option value="11">Nov (11)</option>
+                                                <option value="12">Dec (12)</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-xs-6">
+                                            <select class="form-control" name="expiry_year">
+                                                <option value="13">2013</option>
+                                                <option value="14">2014</option>
+                                                <option value="15">2015</option>
+                                                <option value="16">2016</option>
+                                                <option value="17">2017</option>
+                                                <option value="18">2018</option>
+                                                <option value="19">2019</option>
+                                                <option value="20">2020</option>
+                                                <option value="21">2021</option>
+                                                <option value="22">2022</option>
+                                                <option value="23">2023</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="cvv">Card CVV:</label>
+                                <input type="text" class="form-control" name="cvv" id="cvv" placeholder="Security Code">
+                            </div>
+                            <div class="form-group">
+                                <label for="orderlist">Items:</label>
+                                <input type='text' class='form-control order' name='orderlist' id='orderlist' placeholder="You haven&quot;t selected any items!" readonly>
+                            </div>
+                            
+                            <div class="form-group" id="subtot">
+                                <label for="sub">Subtotal:</label>
+                                <input type='number' class='form-control' name='sub' id='sub' readonly>
+                            </div>
+                            
+                            <div class="form-group">
+                                <input type="submit" class="btn btn-primary" id="order" name="order" value="Place Your Order">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
+        <footer>
+            <p>&copy; 51FireAndSafteyCo 2017</p>
+            <p>Lightbox2 created by <a href="http://lokeshdhakar.com">Lokesh Dhakar</a> and is licensed under the <a href="https://raw.githubusercontent.com/lokesh/lightbox2/master/LICENSE">MIT License</a>.
+        </footer>
+    </div> <!-- /container -->        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+
+        <script src="js/vendor/bootstrap.min.js"></script>
+
+        <script src="js/plugins.js"></script>
+        <script src="js/store.js"></script>
+        <script src="js/vendor/lightbox.min.js"></script>
+        <script src="js/vendor/jquery.validate.min.js"></script>
+        <script src="js/vendor/additional-methods.min.js"></script>
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            e.src='//www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            ga('create','UA-110541564-1','auto');ga('send','pageview');
+        </script>
+    </body>
+</html>

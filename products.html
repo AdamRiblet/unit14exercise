@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Bakery Fakery | Menu</title>
+<meta name="description" content="Fakery Bakery Cupcake and Seasonal Menus." />
+<link rel="stylesheet" href="bootstrap.min.css">
+<link href="default.css" rel="stylesheet" type="text/css" media="screen" />
+<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+<link href='https://fonts.googleapis.com/css?family=Satisfy|Open+Sans:400,600,700' rel='stylesheet' type='text/css' />
+</head>
+<body>
+	<div id="wrapper"> <!-- Start of Wrapper -->
+		<div id="page" class="container"> <!-- Start of Container -->
+			<div id="content"> <!-- Start of Content -->
+	        <a class="image-style"><img src="images/cupcake.png" alt="Bakery Fakery Cupcakes." /></a>
+				<div id="box1" class="post"> <!-- Start of Box1-->
+					<h1 class="text-center container-fluid">Cupcake Menu</h1><br />
+					<p>All Bakery Fakery items are made from scratch using only the best ingredients.</p>
+			  <p>All items are made on equipment that processes milk, eggs, peanuts, wheat, and tree nuts.</p>
+			  </div> <!-- End of Box1 -->
+<div id="box2"> <!-- Start of Box2-->
+	<br>
+	<span class="class="shopcart"><!-- Start of Cart&Script -->
+		<h1 class="text-right shopcart container-fluid">
+		<div id="cart" class="glyphicon glyphicon-shopping-cart my-cart-icon"></div>
+		<div id="cart" class="badge my-cart-badge my-cart-badge""></div>
+		</h1>
+	</span>
+	<div id="productContainer"></div>
+	<br>
+	<script src="https://code.jquery.com/jquery-1.12.1.min.js"></script>
+	<script src="https://netdna.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/jquery.mycart.js"></script>
+	<script type="text/javascript" src="js/products.js"></script>
+	<script type="text/javascript">
+		$(function () {
+
+	    var goToCartIcon = function($addTocartBtn){
+	      var $cartIcon = $(".my-cart-icon");
+	      var $prod = $('<img src="' + $addTocartBtn.data("image") + '"/>');
+	      $addTocartBtn.prepend($prod);
+
+	    }
+
+	    $('.my-cart-btn').myCart({
+	      classCartIcon: 'my-cart-icon',
+	      classCartBadge: 'my-cart-badge',
+	      checkoutCart: function(products) {
+	        $.each(products, function(){
+	          alert("You ordered " + this.quantity + " of the " + this.name + " cupcakes");
+	        });
+	      },
+	      clickOnAddToCart: function($addTocart){
+	        goToCartIcon($addTocart);
+	      }
+	    });
+
+	  });
+	  </script> <!-- End of Cart&Script -->
+
+	  <!-- Start of Modal --> <div class="modal fade" id="my-cart-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="display: none;"><div class="modal-dialog" role="document"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button><h4 class="modal-title" id="myModalLabel">My Cart</h4></div><div class="modal-body"><table class="table table-hover table-responsive" id="my-cart-table"><tbody><tr style="color: black"><td></td><td><strong>Total (including discount)</strong></td><td></td><td></td><td><strong id="my-cart-discount-price">$0</strong></td><td></td></tr></tbody></table></div><div class="modal-footer"><button type="button" class="btn btn-default" data-dismiss="modal">Close</button><button type="button" class="btn btn-primary my-cart-checkout" id="checkout-my-cart">Checkout</button></div></div></div></div> <!-- End of Modal -->
+</div> <!-- End of Box2 -->
+			  <div id="footer"> <!-- Start of Footer -->
+					<p>Design by <a href="http://templated.co" rel="nofollow">TEMPLATED</a>.</p>
+				</div> <!-- End of Footer -->
+			</div> <!-- End of Content -->
+	<div id="sidebar"> <!-- Start of Sidebar -->
+		<div id="logo"><!-- Start of Logo -->
+		  <h1><a href="index.html">Bakery Fakery</a></h1>
+		</div> <!-- End of Logo -->
+		<div id="menu" class="box"> <!-- Start of Menu(Top left Nav Menu) -->
+			<ul>
+				<li><a href="index.html" accesskey="1" title="">Home</a></li>
+				<li><a href="menu.html" accesskey="2" title="">Menu</a></li>
+				<li><a href="contact.html" accesskey="3" title="">Contact Us</a></li>
+			</ul>
+		</div> <!-- End of Menu(Top left Nav Menu) -->
+	</div> <!-- End of Sidebar -->
+</div> <!-- End of Container -->
+<div class="clearfix"></div><!-- Start/End of Clearfix -->
+</div> <!-- End of Wrapper -->
+        <script>
+            window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
+            ga('create','UA-110932531-1','auto');ga('send','pageview')
+        </script>
+        <script src="https://www.google-analytics.com/analytics.js" async defer></script>
+</body>
+</html>
